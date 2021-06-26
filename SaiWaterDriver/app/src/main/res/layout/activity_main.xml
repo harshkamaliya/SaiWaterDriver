@@ -3,16 +3,73 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/ic_background5"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
+        android:text="Login Page"
+        android:textStyle="bold"
+        android:background="@drawable/circle_border"
+        android:padding="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_100"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/etUserId"
+        android:textColorHint="@color/black"
+        android:layout_marginTop="@dimen/dp_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/dp_20"
+        android:padding="@dimen/dp_15"
+        android:background="@drawable/ic_continuebutton"
+        app:layout_constraintTop_toBottomOf="@+id/tvLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:hint="Password"
+        android:textColorHint="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dp_30"
+        app:layout_constraintTop_toBottomOf="@+id/etUserId"
+        android:layout_width="match_parent"
+        android:padding="@dimen/dp_15"
+        android:background="@drawable/ic_continuebutton"
+        android:layout_margin="@dimen/dp_20"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dp_80"
+        android:background="@drawable/ic_continuebutton"
+        android:text="Login"
+        android:backgroundTint="@color/blur_blue"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"
+        android:textColor="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Forgot password?"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
