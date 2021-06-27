@@ -24,7 +24,11 @@ class OrdersAdapter(private var dataList:MutableList<AllOrder>, private val item
 
                 tvOrderTime.text = dataList[position].ordertime
                 tvSocietyName.text = dataList[position].societyName
-//                tvOrderAddress.text = dataList[position].
+
+//                if (!dataList[position].filledby.equals("0")) {
+//                    tvOrderAddress.text = dataList[position].filledby
+//                }
+
               val status = dataList[position].orderStatus
             if (status.equals("0")){
                 btnAccept.text = "Catch Order"

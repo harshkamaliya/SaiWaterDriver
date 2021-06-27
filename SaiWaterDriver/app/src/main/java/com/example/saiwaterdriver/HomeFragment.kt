@@ -38,8 +38,17 @@ class HomeFragment : Fragment(),OrderItemClickListener {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        setUpRecyclerview()
 
+        setUpRecyclerview()
+        observeData()
+        binding.pullToRefresh.setOnRefreshListener {
+            observeData()
+            binding.pullToRefresh.isRefreshing = false;
+        }
+        return binding.root
+    }
+
+    private fun observeData() {
         mainViewModel.getAllOrders("1","tejeetm@gmail.com")
             .observe(viewLifecycleOwner, Observer {response->
 
@@ -51,10 +60,12 @@ class HomeFragment : Fragment(),OrderItemClickListener {
 
                     }
                     is ResultData.Success -> {
+
                         binding.recyclerviewOrder.visibility = View.VISIBLE
                         binding.lottieLoading.visibility = View.INVISIBLE
                         response.data?.let {
                             ordersAdapter.updateData(it)
+                            binding.tvTotalOrdersNumber.text = it.size.toString()
                         }
                     }
                     is ResultData.Exception ->{
@@ -63,7 +74,6 @@ class HomeFragment : Fragment(),OrderItemClickListener {
                 }
             })
 
-        return binding.root
     }
 
     private fun setUpRecyclerview() {
@@ -84,14 +94,14 @@ class HomeFragment : Fragment(),OrderItemClickListener {
         CoroutineScope(Dispatchers.Main).launch {
             if (customer.orderStatus.equals("0")) {
                val response =  mainViewModel.updateOrderStatus(
-                    "1", "PQRST",
-                    "manish@gmail.com", "1",customer.uid,customer.oid)
+                    "1", "Shyam Gupta",
+                    "shayam@gmail.com", "1",customer.uid,customer.oid)
                 val ss = response
 
             }else if (customer.orderStatus.equals("1")) {
                val response = mainViewModel.updateOrderStatus(
-                    "1", "PQRST",
-                    "manish@gmail.com", "2",customer.uid,customer.oid)
+                    "1", "Shyam Gupta",
+                    "shayam@gmail.com", "2",customer.uid,customer.oid)
                 val ss = response
             }
         }

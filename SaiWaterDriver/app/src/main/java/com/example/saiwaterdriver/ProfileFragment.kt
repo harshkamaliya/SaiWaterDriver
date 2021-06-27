@@ -10,6 +10,7 @@ import com.example.saiwaterdriver.databinding.FragmentProfileBinding
 
 
 class ProfilFragment : Fragment() {
+    var toggleState:Boolean= true
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
@@ -20,6 +21,16 @@ class ProfilFragment : Fragment() {
     ): View {
 
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
+
+        binding.btnToggle.setOnClickListener {
+            if (toggleState){
+                binding.idOrdersLayout.visibility = View.GONE
+                toggleState = false
+            }else{
+                binding.idOrdersLayout.visibility = View.VISIBLE
+                toggleState = true
+            }
+        }
 
         return binding.root
     }
