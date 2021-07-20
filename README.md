@@ -1,6 +1,6 @@
 # SaiWaterDriver
 
-Driver apps 
+## Driver apps 
 Customers App - https://github.com/Manishsahu354/SaiWaterCustomer</br>
 Suppliers App - https://github.com/Tejeet/SaiWaterSuppliers</br>
 
@@ -24,13 +24,12 @@ We have Developed an ecosystem which provides hassle free service between the wa
 <b>We have develop 3 different app </b></br>
 Suppliers  </br>
 Customers - https://github.com/Manishsahu354/SaiWaterCustomer</br>
-Drivers - https://github.com/harshkamaliya/SaiWaterDriver</br>
+Suppliers App - https://github.com/Tejeet/SaiWaterSuppliers</br>
+
 
 
 Flow of Ordering
 Based on water level inside the tank, the user will get notification if water level is below threshold(decide by user)so they can manually or automatically place the order to suppliers.Now suppliers can fulfill the order by assigning them to driver and as soon as driver accept it,status of the order changes to onGoing,and while driver is filling the tank an real time data will be shared to the customer.
-
-
 
 
 
