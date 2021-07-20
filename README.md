@@ -1,9 +1,8 @@
 # SaiWaterDriver
 
-# SaiWaterSuppliers
 Sai Water Suppliers Admin Panel </br>
 Customers App - https://github.com/Manishsahu354/SaiWaterCustomer</br>
-Suppliers App -
+Suppliers App - https://github.com/Tejeet/SaiWaterSuppliers</br>
 
 
 <b>Problem Statement</b></br>
